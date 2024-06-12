@@ -1,0 +1,25 @@
+# python
+nums = "128 322 353 235 336 73 198 332 202 285 57 87 262 221 218 405 335 101 256 227 112 140".split(" ")
+
+for i in nums:
+	print(int(i) % 37, end=" ")
+
+
+_____________________________________
+
+decoded = "17 26 20 13 3 36 13 36 17 26 20 13 3 36 33 35 2 27 34 5 1 29".split(" ")
+
+
+alphabet_dict = {index: chr(65 + index) for index in range(26)}
+
+num_dict = {index: chr(48 + (index-26)) for index in range(26, 36)}
+
+for i in decoded:
+	integer = int(i)
+	if integer <= 25:
+		print(alphabet_dict[integer], end="")
+	elif integer >= 26 and integer != 36:
+		print(num_dict[integer], end="")
+	else:
+		print("_", end="")
+
